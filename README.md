@@ -21,3 +21,50 @@ primary care operation of the hospital, but not the financial operation. Basic r
 
 8.  When an admitted patient’s primary doctor decides that the necessary course of treatment has ended, that patient is discharged from the hospital by an administrative employee.
     Required
+
+Required Query Support
+Your database system must support the efficient processing of each of the following information requests.
+
+A. Patient Information
+    1. List all patients currently admitted to the hospital (i.e., those who are currently receiving inpatient services). List only patient identification number and name.
+    2. List all patients who have received outpatient services within a given date range. List only patient identification number and name.
+    3. For a given patient (either patient identification number or name), list all treatments that were administered. Group treatments by admissions. List admissions in
+       descending chronological order, and list treatments in ascending chronological order within each admission.
+       
+B. Diagnosis and Treatment Information
+    1. List the treatments performed at the hospital (to both inpatients and outpatients), in descending order of occurrences. List treatment identification number, name,
+    and total number of occurrences of each treatment.
+    2. For a given treatment occurrence, list all the hospital employees that were involved. Also include the patient name and the doctor who ordered the treatment.
+    
+C. Employee Information
+    1. For a given doctor, list all treatments that they ordered in descending order of occurrence. For each treatment, list the total number of occurrences for the given       
+    doctor.
+    2. List employees who have been involved in the treatment of every admitted patient.
+    3. List the primary doctors of patients with a high admission rate (at least 4 admissions within a
+       one-year time frame).
+       
+Notes and other requirements
+    • Read this handout carefully. Ask questions on Piazza. Start early and be proactive.
+    • This project must be completed individually.
+    • You may develop the project anywhere that is convenient - your own machines, the OIT serve machine, etc. However, I must be able to install your database and associated
+    scripts / application programs. Please provide the instruction.
+    • You are free to make reasonable assumptions regarding the attributes/columns that are stored.
+    Although several specific attributes are listed, some are left to your discretion.
+    
+Project Submission
+Required project deliverables fall into the three categories below.
+1. Specification of the Conceptual Model
+    a. Entity-Relationship Model
+    b. Text annotations of assumptions, constraints, etc.
+    
+2. Specification of the Implementation Model
+    a. Relational schemas
+    b. Description of how the ER model was translated into the listed schemas
+    c. Text description of normalization to BCNF.
+    d. Text annotations of assumptions, constraints, decisions on 3NF, etc.
+    
+3. Database Implementation
+    a. CREATE TABLE commands
+    b. All data and associated INSERT commands
+    c. SQL queries to retrieve requested information
+    d. Optional: Source code for scripts, programs, web pages, etc.
