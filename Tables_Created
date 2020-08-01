@@ -1,0 +1,20 @@
+/*
+
+All tables as shown have been implemented in PostgreSQL
+(9.3.4)
+
+Table creation order (17 total tables)
+Patients
+Rooms
+Services
+Doctors
+Treatment
+Nurses
+Technicians
+Treatment_Administered
+Treatment_Ordered
+Admiting_Doctors
+InPatients
+
+
+*/
