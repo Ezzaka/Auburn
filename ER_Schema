@@ -1,20 +1,24 @@
-Stay relation between inpatient services and and hospital has attribute room number to indicated where the patient stays in the hospital.
+Patient entity has two subclasses, inpatient and outpatient, and has patientid (pid) as primary key. It's other attributes are patientname (PNAME), emergency_contact (EC) and
+insurance_policy_information (IPI).
 
-Employee entity is also forgone; it is sufficient to have Nurses, Technicians, Doctors and Adminstrative staff. Employee has employeeid (EID) as primary key. It's other attributes
-are Eployeename (Ename).
+Services entity belongs in two separate aggregations with inpatients and with outpatients, respectively inpatients services and out patient services. 
 
-Service has a primary key, serviceid, to delineate between type of work. 
+Hospital entity is dropped. Room attribute on the stay relation specifies the room where a patient residess in the hospital. Rooms has foreign key of Patient entity that resides
+within it.
 
-Relationship provides between Volunteer and Service gets its own entity, VolunteerSchedule. It has workid from Volunteer and serviceid from Service as foreign keys; these make up its primary key. Additionally, this entity has a date attribute to determine work schedule queries.
+Employee entity is also dropped; it is sufficient to have Nurses, Technicians, Doctors and Adminstrators. Employee has employeeid (EID) as primary key. It's other
+attributes is Eployee_name (Ename).
 
-Admin entity is unnecessary since Admins are not directly invovled in patient treatment and since Patient can be given an attribute discharge to note when a patient was discharged.
+Administer relation is unnecessary has employee_Id (EID) and time_stamp (TS) as attribute to note the particular employee that is administering treatment and when.
+
+Treatment entity has as foreign keys, patient_id (PID), primary_doctor's_id (PDID) and employee_id (EID). The other attributes are treatment_type (TT) and description 
+
+Order relation between doctor and treatment becomes attributes within Treatment. Specifically, Treatment will have a foreign key, prescriber, which will be a foreign key
+for ConsultingDoctor's workid. 
 
 Admit relation between AdminDoctor and Patient are encompassed as a new entity AdmittedPatients. Specifically, AdmittedPatients has attributes diagnosisID and diagnosis. It also has foreign keys, pid from Patient and workid from AdminDoctor. diagnosisid, pid and workid make up the primary key.
 
 DiagnosticHistory will have foreign keys from Patients(pid), AdminDoctors(workerid), and Diagnosis(diagnosisid) to account for the update and has relationships between AdminDoctor, DiagnosticHistory and Patients as well as the makes relation between Diagnosis and AdminDoctor.
-
-
-Order relation between ConsultingDoctor and Treatment becomes attributes within Treatment. Specifically, Treatment will have a foreign key, prescriber, which will be a foreign key for ConsultingDoctor's workid. 
 
 Administer relation between Nurse/Technician/ConsultingDoctor and Treatment will be an attribute in Treatment. Specifically, Treatment will have a foreign key, primary, which will be a foreign key for Nurse/Technician/ConsultingDoctor workid attribute.
 
