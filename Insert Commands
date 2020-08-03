@@ -1,0 +1,177 @@
+/* INSERT statements */
+
+INSERT INTO Patients VALUES
+('h01', 'Emma', 'Horacemann', 'Nkechi', 'In', '2020/8/18', '2020/8/22'),
+('h02', 'Mark', 'State Farm', 'Chinelo', 'In', '2020/7/31', NULL),
+('h03', 'Oxide', 'Progressive', 'Amina', 'In', '2020/10/01', '2020/10/04'),
+('h04', 'Spiritus', 'Liberty Mutual', 'James', 'In', '2020/8/01', NULL),
+('h05', 'Fauzilante', 'Katapot', 'Uzochukwu',  'In', '2020/7/10', '2020/7/13'),
+('h06', 'Frank', 'Geico',  'Ado', 'Out', NULL, NULL),
+('h07', 'Wole', 'Banky', 'Funke', 'Out', NULL, NULL),
+('h08', 'Baby', 'Wizzy', 'Burna', 'Out', NULL, NULL),
+('h09', 'Oly', 'Don Jazzy', 'Olu', 'Out', NULL, NULL),
+('h10', 'Paddy', 'Teckno', 'Tubaba', 'Out', NULL, NULL);
+
+INSERT INTO Employee VALUES
+('AD0', 'David', 'ADoctor'),
+('AD1', 'Victor', 'ADoctor'),
+('AD2', 'Emma', 'ADoctor'),
+('AD3', 'James', 'ADoctor'),
+('AD4', 'Fab', 'ADoctor'),
+('CD5', 'Chukwu', 'CDoctor'),
+('CD6', 'Ken', 'CDoctor'),
+('CD7', 'Jiji', 'CDoctor'),
+('CD8', 'Ama', 'CDoctor'),
+('CD9', 'Lisa', 'CDoctor'),
+('N10', 'Beky', 'Nurse'),
+('N12', 'Lion', 'Nurse'),
+('N13', 'Tiger', 'Nurse'),
+('N14', 'Leo', 'Nurse'),
+('N15', 'Fab', 'Nurse'),
+('T16', 'Parker', 'Technician'),
+('T17', 'Sama', 'Technician'),
+('T18', 'Cat', 'Technician'),
+('T19', 'Kara', 'Technician'),
+('T20', 'Tara', 'Technician');
+
+INSERT INTO Doctors VALUES
+('AD0', 'h01' /*,'David', 'Emma'*/),
+('AD1', 'h02' /*,'Victor', 'Mark'*/),
+('AD2', 'h03' /*,'Emma', 'Oxide'*/),
+('AD3', 'h04' /*,'James', 'Spiritus'*/),
+('AD4', 'h05' /*,'Fab', 'Fauzilante'*/),
+('CD5', 'h06' /*,'Chukwu', 'Frank'*/),
+('CD6', 'h07' /*,'Ken', 'Wole'*/),
+('CD7', 'h08' /*,'Jiji', 'Baby'*/),
+('CD8', 'h09' /*,'Ama', 'Oly'*/),
+('CD9', 'h10' /*,'Lisa', 'Paddy'*/);
+
+INSERT INTO Treatment VALUES
+('m00', 'Malaria', 'm'),
+('m01', 'Fever', 'm'),
+('m02', 'Missle', 'm'),
+('m03', 'Corona', 'm'),
+('m04', 'Typhord', 'm'),
+('m05', 'Yeast', 'm'),
+('m06', 'Surgery', 'm'),
+('m07', 'Chemo', 'm'),
+('p00', 'HIV test', 'p'),
+('p01', 'Pregnancy test ', 'p'),
+('p02', 'Blood test', 'p'),
+('p03', 'Ultra sound', 'p'),
+('p04', 'Blood sugar', 'p'),
+('p05', 'Drug Test', 'p');
+
+INSERT INTO Treatment_Ordered VALUES
+('O22', 'm01', 'h01', 'AD0', '2020/8/02'),
+('O23', 'm04', 'h01', 'AD0', '2020/8/03'),
+('O24', 'm01', 'h03', 'AD1', '2020-10-01'),
+('O25', 'm03', 'h03', 'AD1', '2020-10-03'),
+('O26', 'm04', 'h02', 'AD2', '2020/7/31'),
+('O27', 'm05', 'h02', 'AD2', '2020/8/02'),
+('O28', 'm06', 'h02', 'AD2', '2020/8/03'),
+('O29', 'm07', 'h02', 'AD2', '2020/8/04'),
+('O30', 'm06', 'h04', 'AD3', '2020/8/01'),
+('O31', 'm02', 'h04', 'AD3', '2020/8/04'),
+('O32', 'm02', 'h05', 'AD4', '2020/7/10'),
+('O33', 'm07', 'h05', 'AD4', '2020/7/13'),
+('O38', 'p02', 'h07', 'CD7', NULL),
+('O39', 'p04', 'h07', 'CD7', NULL),
+('O40', 'p03', 'h07', 'CD7', NULL),
+('O41', 'p01', 'h07', 'CD7', NULL),
+('O42', 'p04', 'h08', 'CD8', NULL),
+('O43', 'p03', 'h08', 'CD8', NULL),
+('O44', 'p02', 'h09', 'CD9', NULL),
+('O45', 'p01', 'h09', 'CD9', NULL)
+;
+
+
+INSERT INTO Treatment_Administered VALUES -- list multiple nurses/doctors/technicians within this table
+('O26', 'm04', 'h02', 'AD2', 'In', '2020/7/31'),
+('O27', 'm05', 'h02', 'T16', 'In', '2020/8/03'),
+('O28', 'm06', 'h02', 'T20', 'In', '2020/8/04'),
+('O29', 'm07', 'h02', 'AD2', 'In', '2020/8/06'),
+('O30', 'm06', 'h04', 'N10', 'In', '2020/8/02'),
+('O30', 'm02', 'h04', 'N10', 'In', '2020/8/04'),
+('O30', 'm06', 'h04', 'T16', 'In', '2020/8/06'),
+('O31', 'm02', 'h04', 'AD3', 'In', '2020/8/06'),
+('O32', 'm02', 'h05', 'AD4', 'In', '2020/07/10'),
+('O32', 'm07', 'h05', 'N12', 'In', '2020/07/10'),
+('O32', 'm07', 'h05', 'CD6', 'In', '2020/07/12'),
+('O33', 'm07', 'h05', 'T19', 'In', '2020/07/12'),
+('O24', 'm01', 'h03', 'AD1', 'In', '2020/10/01'),
+('O24', 'm01', 'h03', 'T20', 'In', '2020/10/02'),
+('O25', 'm03', 'h03', 'T18', 'In', '2020/10/02'),
+('O25', 'm03', 'h03', 'N12', 'In', '2020/10/03'),
+('O22', 'm01', 'h01', 'T19', 'In', '2020/8/02'),
+('O22', 'm01', 'h01', 'AD0', 'In', '2020/8/02'),
+('O23', 'm04', 'h01', 'AD0', 'In', '2020/8/03'),
+('O23', 'm04', 'h01', 'N10', 'In', '2020/8/03'),
+('O38', 'P02', 'h07', 'CD7', 'Out', NULL),
+('O39', 'P02', 'h07', 'T17', 'Out', NULL),
+('O40', 'P04', 'h07', 'CD8', 'Out', NULL),
+('O41', 'P03', 'h07', 'N14', 'Out', NULL),
+('O39', 'P01', 'h07', 'CD7', 'Out', NULL),
+('O42', 'P04', 'h08', 'CD8', 'Out', NULL),
+('O42', 'P04', 'h08', 'AD0', 'Out', NULL),
+('O42', 'P04', 'h08', 'N10', 'Out', NULL),
+('O43', 'P03', 'h08', 'T18', 'Out', NULL),
+('O43', 'P03', 'h08', 'CD8', 'Out', NULL),
+('O44', 'P02', 'h09', 'CD9', 'Out', NULL),
+('O44', 'P01', 'h09', 'CD9', 'Out', NULL),
+('O45', 'P02', 'h09', 'N12', 'Out', NULL),
+('O45', 'P01', 'h09', 'T20', 'Out', NULL)
+;
+
+INSERT INTO Admiting_Doctors VALUES
+('AD0', 'David'),
+('AD1', 'Victor'),
+('AD2', 'Emma'),
+('AD3', 'James'),
+('AD4', 'Fab')
+;
+
+INSERT INTO Admitted_Patients VALUES
+('h01', 'AD0', '2018/8/09', '2018/8/24'),
+('h01', 'AD0', '2018/9/2', '2018/10/17'),
+('h01', 'AD0', '2019/2/19', '2019/2/22'),
+('h01', 'AD0', '2019/11/14', '2019/11/20'),
+('h01', 'AD0', '2020/8/18', '2020/8/22'),
+('h02', 'AD1', '2018/7/09', '2018/7/24'),
+('h02', 'AD1', '2018/8/2', '2018/8/17'),
+('h02', 'AD1', '2019/9/19', '2019/10/22'),
+('h02', 'AD1', '2019/11/14', '2019/11/20'),
+('h02', 'AD1', '2020/7/31', NULL),
+('h03', 'AD2', '2018/8/07', '2018/8/22'),
+('h03', 'AD2', '2018/10/2', '2018/10/17'),
+('h03', 'AD2', '2019/2/13', '2019/2/17'),
+('h03', 'AD2', '2019/10/14', '2019/10/19'),
+('h03', 'AD2', '2020/10/01', '2020/10/04'),
+('h04', 'AD3', '2017/12/09', '2017/12/28'),
+('h04', 'AD3', '2018/6/2', '2018/7/17'),
+('h04', 'AD3', '2018/11/19', '2018/12/22'),
+('h04', 'AD3', '2019/2/1', '2019/4/20'),
+('h04', 'AD3', '2020/8/01', NULL),
+('h05', 'AD4', '2017/7/10', '2017/7/13'),
+('h05', 'AD4', '2019/7/10', '2019/7/13'),
+('h05', 'AD4', '2020/5/1', '2020/5/8'),
+('h05', 'AD4', '2020/6/10', '2020/6/14'),
+('h05', 'AD4', '2020/7/10', '2020/7/13')
+;
+
+INSERT INTO Nurses VALUES
+('N10', 'Beky'),
+('N12', 'Lion'),
+('N13', 'Tiger'),
+('N14', 'Leo'),
+('N15', 'Fab')
+;
+
+INSERT INTO Technicians VALUES
+('T16', 'Parker'),
+('T17', 'Sama'),
+('T18', 'Cat'),
+('T19', 'Kara'),
+('T20', 'Tara');
+
+
