@@ -1,0 +1,23 @@
+Patient entity has two subclasses, inpatient and outpatient, and has patientid (pid) as primary key. It's other attributes are patientname (PNAME), emergency_contact (EC),
+insurance_policy_information (IPI), admitted_date and discharged date. Discharge date is NULL for patient that are still admitted. Admitted/Disharged
+date are both null for out patients.
+
+Employee entity contains Nurses, Technicians, Doctors and Adminstrators. Employee has employeeid (EID) as primary key. It's other
+attributes is Eployee_name (Ename) and employee_type (etype).
+
+Doctors entity refers to consulting doctors which includes admitting doctors. eid is both a primary key and s foriegn key referrencing employee.
+
+Services entity is dropped. Out patient and inpatient services are captured under treatment. We have Treament_Ordered and Treatment_Administered.
+
+Treatment_Ordered/Administered entity have as foreign keys, patient_id (PID), primary_doctor's_id (PDID/EID). The other attributes are treatment_type (TT) and description 
+
+Order relation between doctor and treatment becomes attributes within Treatment_Ordered. Specifically, 
+
+Admit relation between Admiting_Doctor and Patient is covered within the entity Admitted_Patients.
+
+Administer relation between Nurse/Technician/ConsultingDoctor and Treatment is captured within the entity Treatment_Administered.
+
+Receives relation between Patient and Treatment is an attribute in Treatment entity.
+
+Treatment_Administered will have a timestamp to account for when it was administered. It will have a type to specify what type of treatment
+that is being performed.
