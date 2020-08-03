@@ -1,0 +1,4 @@
+We assume time of outpatient treatment was not recorded.
+We assumed only Admiting_Doctors could admit Patients to the hospital. 
+We assumed Admiting_Doctors are the only primary doctors. 
+We assumed only one Doctor would be part of any Treatment, but, there could be any number of Technicians/Nurses.
