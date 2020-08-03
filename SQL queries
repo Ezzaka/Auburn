@@ -45,7 +45,7 @@ ORDER BY occurrence desc;
 2. For a given treatment occurrence, list all the hospital employees that were involved. Also
 include the patient name and the doctor who ordered the treatment.
 ***************************************/
-select employee.ename, employee.eid, patients.pname, doctors from
+select q1.ename, q1.eid, q1.pname, doctors from
 (
 SELECT employee.ename, employee.eid, patients.pname
 FROM Treatment_Administered join Treatment USING (tid) join employee using (eid) join patients using (pid)
@@ -78,5 +78,5 @@ FROM Treatment_Administered JOIN Admitted_Patients USING (eid) join employee usi
 SELECT employee.eid, employee.ename, COUNT(Treatment.eid) as admissionrate
 FROM Admitted_Patients JOIN doctors USING (pid)
 where COUNT(Treatment.eid) > 3
-and in one year;
+and admindate in one year;
 
