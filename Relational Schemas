@@ -1,0 +1,89 @@
+Patients( 
+	pid char(3),
+	pname varchar(20),
+	insurance varchar(20), 
+	contact varchar(20),
+	patient_type char(3), 
+	admitted date,
+	discharged date,
+	PRIMARY KEY (pid)
+);
+
+Employee (
+	eid char(3),
+	ename varchar(20), 
+	etype varchar(20),
+	PRIMARY KEY (eid)
+);
+
+Doctors(
+	eid char(3),
+    pid char(3),
+   /* ename  char(20),
+    pname varchar(20),*/
+	PRIMARY KEY (eid),
+	FOREIGN KEY (eid) REFERENCES Employee(eid)
+);
+
+Treatment(
+	tid char(3),
+	tdescription varchar(20),
+	ttype char(1), 
+	PRIMARY KEY (tid)
+);
+
+Treatment_Ordered(
+	orderid char(3) UNIQUE,
+	tid char(3),
+	pid char(3),    
+	eid char(3),
+	orderdate date,
+	PRIMARY KEY (tid, eid, pid),
+	FOREIGN KEY (tid) REFERENCES Treatment(tid),
+	FOREIGN KEY (eid) REFERENCES Doctors(eid),
+	FOREIGN KEY (pid) REFERENCES Patients(pid)
+);
+
+Treatment_Administered(
+	orderid char(3),
+	tid char(3),
+	pid char(3),
+	eid char(3),
+	ttype char(3),
+	admindate date,
+	PRIMARY KEY (tid, PID, eid),
+	FOREIGN KEY (tid) REFERENCES Treatment(tid),
+	FOREIGN KEY (eid) REFERENCES Employee(eid),
+	FOREIGN KEY (pid) REFERENCES Patients(pid)
+);
+
+Admiting_Doctors(
+	eid char(3),
+	ename varchar(20), 
+	PRIMARY KEY (eid),
+	FOREIGN KEY (eid) REFERENCES Doctors(eid)
+);
+
+Admitted_Patients(
+	pid char(3),
+	eid char(3),
+	admission date, 
+	discharge date,
+	PRIMARY KEY (pid, eid, admission),
+	FOREIGN KEY (pid) REFERENCES Patients(pid),
+	FOREIGN KEY (eid) REFERENCES Admiting_Doctors(eid)
+);
+
+Nurses(
+	eid char(3),
+	ename varchar(20), 
+	PRIMARY KEY (eid),
+	FOREIGN KEY (eid) REFERENCES Employee(eid)
+);
+
+Technicians(
+	eid char(3),
+	ename varchar(20), 
+	PRIMARY KEY (eid),
+	FOREIGN KEY (eid) REFERENCES employee(eid)
+)
