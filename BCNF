@@ -1,1 +1,21 @@
-All of my tables are in BCNF.
+Normalizations to BCNF: No normalization is needed since the left hand sides are BCNF. 
+
+Patients:	              (pid -> pname, insurance,	contact, patient_type, admitted, discharged)
+
+Employee:	              (eid -> ename,	etype)
+
+Doctors:	              (eid, pid)
+
+Treatment:              (tid -> tdescription, ttype)
+
+Treatment_Ordered:	    (orderid -> tid, pid, eid, orderdate)
+
+Treatment_Administered:	(orderid, tid, pid, eid, ttype, admindate)
+
+Admiting_Doctors:	      (eid ->	ename) 
+
+Admitted_Patients:    	((pid, eid,	admission) ->	discharge)
+
+Nurses:	                (eid ->	ename)
+
+Technicians:  	        (eid ->	ename)
