@@ -1,0 +1,11 @@
+Employee is superclass to Administrator, Doctors, Nurses and Technicians.
+
+A Patient may be admitted by any number of Admiting_Doctors. Admiting_Doctors have no limit to the number of patients they can admit/discharge. A Patient may be admitted by
+any number of Admiting_Doctors.
+
+Admiting_Doctor is a subclass of Doctors. Every Doctor is a Consulting_Doctor and can order any number of Treatments. Treatment must be ordered by a Doctor. Treatment may be
+received by any number of Patients. A Patient can receive any number of Treatments. Treatment can be administered by one or more Employees save for Administrators.
+A ttype attribute is used to specify Outpatient and Inpatient treatments. A tdescription attribute is used to specify Medications and Procedures.
+
+
+
